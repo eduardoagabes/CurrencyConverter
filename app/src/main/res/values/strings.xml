@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">CurrencyConverter</string>
+
+
+    <string-array name="item_array">
+        <item>BRL</item>
+        <item>USD</item>
+        <item>GBP</item>
+        <item>EUR</item>
+    </string-array>
 </resources>
