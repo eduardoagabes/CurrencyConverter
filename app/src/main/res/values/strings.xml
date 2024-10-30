@@ -8,4 +8,9 @@
         <item>GBP</item>
         <item>EUR</item>
     </string-array>
+
+    <style name="circle" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">@color/navy</item>
+        <item name="tint">@color/navy</item>
+    </style>
 </resources>

@@ -82,6 +82,12 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.tieAmount.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+
             override fun afterTextChanged(s: Editable?) {
                 val inputValue = s.toString().toDoubleOrNull() ?: 0.0
 
@@ -89,22 +95,15 @@ class MainActivity : AppCompatActivity() {
                 val destinationCurrency = binding.spinnerConverted.selectedItem as DataConversor
 
                 val resultado = (inputValue * originCurrency.worth) / destinationCurrency.worth
-                binding.tieConvertedAmount.setText(String.format("%.2f", resultado))
 
-                binding.tvConvertedResult.text = String.format(
-                    "%.2f %s = %.2f %s",
-                    inputValue,
-                    originCurrency.coin,
+                binding.tvResult.text = String.format(
+                    "%.2f %s",
                     resultado,
                     destinationCurrency.coin
                 )
+
             }
 
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-            }
         })
 
         binding.fabReverse.setOnClickListener {
@@ -122,6 +121,11 @@ class MainActivity : AppCompatActivity() {
             updateConversion()
         }
 
+        binding.btnLimpiar.setOnClickListener {
+            binding.tieAmount.setText("")
+            binding.tvResult.text = ""
+        }
+
     }
 
     private fun updateConversion() {
@@ -130,15 +134,10 @@ class MainActivity : AppCompatActivity() {
         val destinationCurrency = binding.spinnerConverted.selectedItem as DataConversor
 
         val resultado = (inputValue * originCurrency.worth) / destinationCurrency.worth
-        binding.tieConvertedAmount.setText(String.format("%.2f", resultado))
-        binding.tvConvertedResult.text = String.format(
-            "%.2f %s = %.2f %s",
-            inputValue,
-            originCurrency.coin,
+        binding.tvResult.text = String.format(
+            "%.2f %s",
             resultado,
             destinationCurrency.coin
         )
     }
-
-
 }

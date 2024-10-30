@@ -12,6 +12,9 @@
 
     <TextView
         android:id="@+id/textView"
+        android:textColor="@color/sea"
+        android:textColorHint="#76ABAE"
+        android:textColorHighlight="#76ABAE"
         android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

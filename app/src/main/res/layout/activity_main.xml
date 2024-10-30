@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
         android:text="Currency Converter"
-        android:textColor="@color/gradient"
+        android:textColor="@color/sea"
         android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,11 +26,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="48dp"
         android:gravity="center"
         android:text="Check live rates, set rate alerts, receive notifications and more."
-        android:textColor="@color/navy"
+        android:textColor="@color/sky"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +41,7 @@
         android:layout_width="360dp"
         android:layout_height="300dp"
         android:background="@drawable/gradient_main"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/teal"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,8 +73,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="24dp"
-                android:text="Amount"
-                android:textColor="@color/navy"
+                android:text="From"
+                android:textColor="@color/sea"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -84,6 +84,7 @@
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_margin="16dp"
+                android:backgroundTint="#76ABAE"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_amount_label" />
 
@@ -92,11 +93,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:background="@color/blue"
-                app:boxStrokeColor="@color/navy"
+                android:textColorHint="@color/sea"
+                app:boxBackgroundColor="#C0DBF8"
+                app:boxStrokeColor="@color/sea"
                 app:boxStrokeWidth="0dp"
-                app:cursorColor="@color/navy"
+                app:cursorColor="@color/sea"
                 app:hintEnabled="false"
+                app:hintTextColor="@color/sea"
                 app:layout_constraintBottom_toBottomOf="@+id/spinner_amount"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/spinner_amount"
@@ -105,35 +108,37 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tie_amount"
                     android:layout_width="match_parent"
+                    android:textColorHint="@color/sky"
                     android:layout_height="wrap_content"
-                    android:hint="Valor"
-                    android:inputType="numberDecimal" />
+                    android:textColor="@color/sea"
+                    android:textColorHighlight="@color/sky"
+                    android:hint="Amount"
+                    android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fab_Reverse"
+                style="@style/circle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:contentDescription="TODO"
                 android:rotation="90"
                 android:src="@drawable/reverse"
-                app:backgroundTint="@color/gradient"
+                app:backgroundTint="@color/sea"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.5"
                 app:tint="@color/white" />
 
             <TextView
                 android:id="@+id/tv_convertedAmount_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="32dp"
-                android:text="Converted Amount"
-                android:textColor="@color/navy"
+                android:layout_margin="24dp"
+                android:text="To"
+                android:textColor="@color/sea"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view" />
@@ -143,78 +148,36 @@
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_margin="16dp"
+                android:backgroundTint="#76ABAE"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_convertedAmount_label" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_converted_amount"
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/tv_result"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:background="@color/blue"
-                app:boxStrokeColor="@color/navy"
-                app:boxStrokeWidth="0dp"
-                app:cursorColor="@color/navy"
-                app:hintEnabled="false"
+                android:textColor="@color/sea"
+                android:textSize="24sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/spinner_converted"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/spinner_converted"
-                app:layout_constraintTop_toTopOf="@+id/spinner_converted">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tie_converted_amount"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Valor"
-                    android:inputType="numberDecimal" />
-            </com.google.android.material.textfield.TextInputLayout>
+                app:layout_constraintTop_toTopOf="@+id/spinner_converted"
+                tools:text="0" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_result_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_margin="24dp"
-        android:text="Indicativa Exchange Rate"
-        android:textColor="@color/navy"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-    <TextView
-        android:id="@+id/tv_amount_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:textColor="@color/gradient"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_result_label"
-        tools:text="0 =" />
-
-    <TextView
-        android:id="@+id/tv_converted_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:textColor="@color/gradient"
-        android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/tv_amount_result"
-        app:layout_constraintTop_toBottomOf="@+id/tv_result_label"
-        tools:text="0" />
-
     <Button
         android:id="@+id/btn_limpiar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="32dp"
-        android:text="CLEAN"
+        android:backgroundTint="@color/sky"
+        android:text="Clean"
+        android:textColor="@color/blue"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

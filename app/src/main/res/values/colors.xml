@@ -2,8 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="blue">#DCF2F1</color>
-    <color name="navy">#7FC7D9</color>
-    <color name="gradient">#365486</color>
-    <color name="sea">#0F1035</color>
+    <color name="blue">#EEF5FF</color>
+    <color name="teal">#B4D4FF</color>
+    <color name="sky">#86B6F6</color>
+    <color name="sea">#176B87</color>
+    <color name="navy">#172B87</color>
 </resources>
