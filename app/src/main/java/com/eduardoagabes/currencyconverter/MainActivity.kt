@@ -125,7 +125,7 @@ class MainActivity : AppCompatActivity() {
             binding.tieAmount.setText("")
             binding.tvResult.text = ""
         }
-
+1
     }
 
     private fun updateConversion() {
